@@ -5,16 +5,11 @@ public class BankAccount {
         public String personName;
         public double accountAmount = 0;
 
-
-        public double getAccountAmount() {
-                return accountAmount;
+        public void addMoneytoAccount(double addMoney) {
+                accountAmount += addMoney;
         }
 
-        public double addMoneytoAccount(double addMoney) {
-                return accountAmount + addMoney;
-        }
-
-        public double retrieveMoneytoAccount(double retrieveMoney) {
-                return accountAmount - retrieveMoney;
+        public void retrieveMoneytoAccount(double retrieveMoney) {
+                accountAmount -= retrieveMoney;
         }
 }
