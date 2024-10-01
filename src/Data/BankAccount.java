@@ -10,7 +10,13 @@ public class BankAccount {
         }
 
         public void retrieveMoneytoAccount(double amount) {
-                accountAmount -= amount;
+                // Ensure that the account has enough money to retrieve.
+                if (accountAmount >= amount) {
+                        accountAmount -= amount;
+                        System.out.println("Se han retirado " + amount + " de su cuenta. Saldo actual: " + accountAmount);
+                } else {
+                        System.out.println("Fondos insuficientes. Saldo actual: " + accountAmount);
+                }
         }
 
         public void chooseOperation(int choice, double amount) {
