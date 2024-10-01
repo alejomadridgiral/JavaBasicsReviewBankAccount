@@ -13,19 +13,17 @@ public class Runner {
         BankAccount myBankAccount = new BankAccount();
         myBankAccount.personName = getPersonName;
 
-        System.out.println("El valor disponible en su cuenta es: " + myBankAccount.accountAmount);
+        System.out.println("Usuario " + myBankAccount.personName + " el valor disponible en su cuenta es: " + myBankAccount.accountAmount);
 
-        System.out.println("por favor agregue el valor que desea sumar a su cuenta:");
-        double receiveAmountToAdd = scan.nextFloat();
-        myBankAccount.addMoneytoAccount(receiveAmountToAdd);
+        System.out.println("Seleccione una operación:");
+        System.out.println("1: Agregar dinero a la cuenta");
+        System.out.println("2: Retirar dinero de la cuenta");
+        int choice = scan.nextInt();  // Read the user's choice (1 or 2).
+        System.out.println("Ingrese la cantidad:");
+        double amount = scan.nextDouble();  // Read the amount to add or retrieve
+        myBankAccount.chooseOperation(choice, amount);
 
-        System.out.println("El valor disponible en su cuenta es: " + myBankAccount.accountAmount);
+        System.out.println("Usuario " + myBankAccount.personName + " el valor disponible en su cuenta es: " + myBankAccount.accountAmount);
 
-        System.out.println("por favor agregue el valor que desea sacar de su cuenta:");
-        double receiveAmountToRetrieve = scan.nextFloat();
-        myBankAccount.retrieveMoneytoAccount(receiveAmountToRetrieve);
-
-        System.out.println("Usuario(a); " + myBankAccount.personName);
-        System.out.println("El valor disponible en su cuenta es " + myBankAccount.accountAmount);
-    }
+        }
 }
